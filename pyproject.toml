@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "winfiletime"
+version = "1.0"
+description = "Win32 Filetime / Datetime conversion functions"
+authors = ["Jerome Leclanche <jerome@leclan.ch>"]
+license = "CC0-1.0"
+readme = "README.md"
+repository = "https://github.com/jleclanche/winfiletime"
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Topic :: System",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,23 +1,8 @@
 from calendar import timegm
-from datetime import datetime, timedelta, tzinfo
-
+from datetime import datetime, timezone
 
 EPOCH_AS_FILETIME = 116444736000000000  # January 1, 1970 as filetime
 HUNDREDS_OF_NS = 10000000
-
-
-class UTC(tzinfo):
-	def utcoffset(self, dt):
-		return timedelta(0)
-
-	def tzname(self, dt):
-		return "UTC"
-
-	def dst(self, dt):
-		return timedelta(0)
-
-
-utc = UTC()
 
 
 def from_datetime(dt: datetime) -> int:
@@ -27,7 +12,7 @@ def from_datetime(dt: datetime) -> int:
 	"""
 
 	if dt.tzinfo is None or dt.tzinfo.utcoffset(dt) is None:
-		dt = dt.replace(tzinfo=utc)
+		dt = dt.replace(tzinfo=timezone.utc)
 
 	filetime = EPOCH_AS_FILETIME + (timegm(dt.timetuple()) * HUNDREDS_OF_NS)
 	return filetime + (dt.microsecond * 10)
