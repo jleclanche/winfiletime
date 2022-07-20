@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "winfiletime"
-version = "1.0"
+version = "2.0"
 description = "Win32 Filetime / Datetime conversion functions"
 authors = ["Jerome Leclanche <jerome@leclan.ch>"]
 license = "CC0-1.0"
